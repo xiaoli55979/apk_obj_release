@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-05-18T09:27:23.361Z",
+  "generatedAt": "2026-05-18T11:45:33.539Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -10,6 +10,16 @@
       "ios": [],
       "android": [],
       "mac": [
+        {
+          "version": "v0.1.4",
+          "uploadedAt": "2026-05-18T11:45:29Z",
+          "tag": "v0.1.4",
+          "releaseName": "APKObj v0.1.4",
+          "notes": "由主工程 e851bee7cb31350c07184d7e5ba5e5a8134cdb25 自动构建",
+          "file": "apkobj-mac-v0.1.4.zip",
+          "size": 132894604,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.4/apkobj-mac-v0.1.4.zip"
+        },
         {
           "version": "v0.1.3",
           "uploadedAt": "2026-05-18T09:27:09Z",
@@ -53,6 +63,16 @@
       ],
       "win": [
         {
+          "version": "v0.1.4",
+          "uploadedAt": "2026-05-18T11:45:29Z",
+          "tag": "v0.1.4",
+          "releaseName": "APKObj v0.1.4",
+          "notes": "由主工程 e851bee7cb31350c07184d7e5ba5e5a8134cdb25 自动构建",
+          "file": "apkobj-win-v0.1.4.zip",
+          "size": 128639334,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.4/apkobj-win-v0.1.4.zip"
+        },
+        {
           "version": "v0.1.3",
           "uploadedAt": "2026-05-18T09:27:09Z",
           "tag": "v0.1.3",
@@ -93,7 +113,7 @@
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.0/apkobj-win-v0.1.0.zip"
         }
       ],
-      "latestAt": "2026-05-18T09:27:09Z"
+      "latestAt": "2026-05-18T11:45:29Z"
     }
   ]
 }
