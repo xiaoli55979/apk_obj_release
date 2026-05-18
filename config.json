@@ -3,6 +3,11 @@
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
   "siteTitle": "APKObj 工具 · 分发",
   "pcMatchers": [
-    { "bundleId": "com.apkobj.tools", "prefixes": ["apkobj"] }
+    {
+      "bundleId": "com.apkobj.tools",
+      "displayName": "APKObj",
+      "iconUrl": "icons/apkobj.png",
+      "prefixes": ["apkobj"]
+    }
   ]
 }

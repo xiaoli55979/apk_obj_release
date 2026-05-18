@@ -37,21 +37,34 @@ function escapeXml(s) {
 }
 function slugify(s) { return String(s).replace(/[^a-zA-Z0-9._-]/g, '_'); }
 
-// pcMatchers: [{ bundleId, prefixes: [...] }] —— 按文件名前缀把 dmg/exe/zip 归到指定 bundleId
-// 长前缀优先,大小写不敏感
+// pcMatchers: [{ bundleId, displayName, iconUrl, prefixes: [...] }]
+// 按文件名前缀把 dmg/exe/zip 归到指定 bundleId; 同时支持 displayName / iconUrl 覆盖默认显示
 const PC_MATCHERS = (() => {
   const raw = Array.isArray(CONFIG.pcMatchers) ? CONFIG.pcMatchers : [];
   return raw
-    .flatMap(m => (m.prefixes || []).map(p => ({ bundleId: m.bundleId, prefix: String(p).toLowerCase() })))
+    .flatMap(m => (m.prefixes || []).map(p => ({
+      bundleId: m.bundleId,
+      displayName: m.displayName,
+      iconUrl: m.iconUrl,
+      prefix: String(p).toLowerCase(),
+    })))
     .sort((a, b) => b.prefix.length - a.prefix.length);
 })();
 function matchPcByFilename(name) {
   const lower = String(name).toLowerCase();
-  for (const { bundleId, prefix } of PC_MATCHERS) {
-    if (lower.startsWith(prefix)) return bundleId;
+  for (const m of PC_MATCHERS) {
+    if (lower.startsWith(m.prefix)) return m;   // 返回整个对象 (含 displayName/iconUrl), 不只 bundleId
   }
   return null;
 }
+// bundleId -> meta 字典 (按 bundleId 找 displayName/iconUrl, 不依赖前缀匹配)
+const PC_META_BY_ID = (() => {
+  const m = {};
+  for (const x of (CONFIG.pcMatchers || [])) {
+    if (x.bundleId) m[x.bundleId] = { displayName: x.displayName, iconUrl: x.iconUrl };
+  }
+  return m;
+})();
 
 function fetchReleases() {
   const out = sh('gh', ['api', '--paginate', `/repos/${REPO}/releases?per_page=100`]);
@@ -198,8 +211,8 @@ async function main() {
 
       if (platform === 'mac' || platform === 'win') {
         // 优先用文件名前缀匹配,跨 release 也能正确归组;匹配不上再用同 release 的 ipa/apk 兜底
-        const matchedBundleId = matchPcByFilename(asset.name);
-        const targetBundleId = matchedBundleId || releaseBundleId;
+        const matched = matchPcByFilename(asset.name);
+        const targetBundleId = (matched && matched.bundleId) || releaseBundleId;
         if (!targetBundleId) {
           console.warn(`[skip] ${ext} ${asset.name}: 文件名前缀不在 pcMatchers 中,且 release ${rel.tag_name} 没有 ipa/apk 提供 bundleId`);
           continue;
@@ -207,10 +220,18 @@ async function main() {
         const pkgUrl = asset.browser_download_url;
         const uploadedAt = asset.updated_at || asset.created_at || rel.published_at;
         if (!apps.has(targetBundleId)) {
+          const meta = matched || PC_META_BY_ID[targetBundleId] || {};
+          // displayName 优先 > ipa/apk 解析出的 name > bundleId
+          const friendlyName = meta.displayName || releaseAppName || targetBundleId;
+          // iconUrl 配置了就直接拼 publicUrl
+          const friendlyIcon = meta.iconUrl
+            ? (meta.iconUrl.startsWith('http') ? meta.iconUrl : `${PUBLIC_URL}/${meta.iconUrl.replace(/^\//,'')}`)
+            : null;
           apps.set(targetBundleId, {
             id: targetBundleId,
-            name: matchedBundleId ? targetBundleId : (releaseAppName || targetBundleId),
-            icon: null, ios: [], android: [], mac: [], win: []
+            name: friendlyName,
+            icon: friendlyIcon,
+            ios: [], android: [], mac: [], win: []
           });
         }
         const app = apps.get(targetBundleId);
