@@ -6,7 +6,7 @@
     {
       "bundleId": "com.apkobj.tools",
       "displayName": "APKObj",
-      "iconUrl": "icons/apkobj.png",
+      "iconUrl": "assets/icons/apkobj.png",
       "prefixes": ["apkobj"]
     }
   ]
