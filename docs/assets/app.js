@@ -24,6 +24,12 @@
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
   }
 
+  // 版本号统一加 v 前缀, 但 entry.version 如果已经是 v 开头就不重复 (避免 vv0.1.0)
+  function vlabel(version) {
+    const s = String(version || '');
+    return /^v\d/i.test(s) ? s : 'v' + s;
+  }
+
   function fmtSize(bytes) {
     if (!bytes) return '';
     const units = ['B', 'KB', 'MB', 'GB'];
@@ -58,7 +64,7 @@
 
     const a = document.createElement('a');
     a.className = `btn btn-${platform}`;
-    a.innerHTML = `${meta.btnLabel}<small>v${entry.version} · ${fmtSize(entry.size)}</small>`;
+    a.innerHTML = `${meta.btnLabel}<small>${vlabel(entry.version)} · ${fmtSize(entry.size)}</small>`;
     const url = entryUrl(platform, entry);
     a.href = url;
 
@@ -93,7 +99,7 @@
       row.className = 'history-item';
       const ver = document.createElement('span');
       ver.className = 'ver';
-      ver.textContent = 'v' + e.version;
+      ver.textContent = vlabel(e.version);
       const when = document.createElement('span');
       when.className = 'when';
       when.textContent = fmtTime(e.uploadedAt) + ' · ' + fmtSize(e.size);
@@ -107,7 +113,7 @@
       qr.title = '扫码' + meta.histLabel;
       qr.setAttribute('aria-label', '扫码' + meta.histLabel);
       qr.innerHTML = qrIconSvg();
-      qr.addEventListener('click', () => openQr('扫码' + meta.histLabel + ' v' + e.version, url, ''));
+      qr.addEventListener('click', () => openQr('扫码' + meta.histLabel + ' ' + vlabel(e.version), url, ''));
       row.append(ver, when, a, qr);
       wrap.appendChild(row);
     });
