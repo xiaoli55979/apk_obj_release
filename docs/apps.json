@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-05-18T07:37:53.558Z",
+  "generatedAt": "2026-05-18T07:42:36.343Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -9,8 +9,7 @@
       "icon": null,
       "ios": [],
       "android": [],
-      "mac": [],
-      "win": [
+      "mac": [
         {
           "version": "v0.1.0",
           "uploadedAt": "2026-05-18T07:37:36Z",
@@ -20,7 +19,9 @@
           "file": "apkobj-mac-v0.1.0.zip",
           "size": 113457744,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.0/apkobj-mac-v0.1.0.zip"
-        },
+        }
+      ],
+      "win": [
         {
           "version": "v0.1.0",
           "uploadedAt": "2026-05-18T07:37:36Z",
