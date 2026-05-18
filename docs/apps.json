@@ -1,12 +1,12 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-05-18T07:42:36.343Z",
+  "generatedAt": "2026-05-18T07:48:15.175Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
-      "name": "com.apkobj.tools",
-      "icon": null,
+      "name": "APKObj",
+      "icon": "https://xiaoli55979.github.io/apk_obj_release/icons/apkobj.png",
       "ios": [],
       "android": [],
       "mac": [
