@@ -172,11 +172,20 @@ async function main() {
     // 先处理 ipa/apk 拿到 bundleId,再处理 dmg/exe/zip 挂到同一 app
     const rawAssets = rel.assets || [];
     const extOf = (n) => (n.match(/\.(ipa|apk|dmg|exe|zip)$/i) || [])[1]?.toLowerCase() || '';
-    const platformOf = (ext) => ext === 'ipa' ? 'ios'
-      : ext === 'apk' ? 'android'
-      : ext === 'dmg' ? 'mac'
-      : (ext === 'exe' || ext === 'zip') ? 'win' : null;
-    const rank = (n) => { const p = platformOf(extOf(n)); return (p === 'ios' || p === 'android') ? 0 : p ? 1 : 2; };
+    // .zip 需要看文件名: 含 mac/macos 归 mac, 含 win/windows 归 win, 否则 win (默认)
+    const platformOf = (name, ext) => {
+      if (ext === 'ipa') return 'ios';
+      if (ext === 'apk') return 'android';
+      if (ext === 'dmg') return 'mac';
+      if (ext === 'exe') return 'win';
+      if (ext === 'zip') {
+        const lower = name.toLowerCase();
+        if (/(^|[-_.])(mac|macos|darwin|osx)([-_.]|$)/.test(lower)) return 'mac';
+        return 'win';   // 默认 zip = win, 历史兼容
+      }
+      return null;
+    };
+    const rank = (n) => { const p = platformOf(n, extOf(n)); return (p === 'ios' || p === 'android') ? 0 : p ? 1 : 2; };
     const orderedAssets = rawAssets.slice().sort((a, b) => rank(a.name) - rank(b.name));
 
     let releaseBundleId = null;
@@ -184,7 +193,7 @@ async function main() {
 
     for (const asset of orderedAssets) {
       const ext = extOf(asset.name);
-      const platform = platformOf(ext);
+      const platform = platformOf(asset.name, ext);
       if (!platform) continue;
 
       if (platform === 'mac' || platform === 'win') {
