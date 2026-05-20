@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-05-19T08:30:50.902Z",
+  "generatedAt": "2026-05-20T07:27:39.847Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -10,6 +10,16 @@
       "ios": [],
       "android": [],
       "mac": [
+        {
+          "version": "v0.1.22",
+          "uploadedAt": "2026-05-20T07:27:38Z",
+          "tag": "v0.1.22",
+          "releaseName": "APKObj v0.1.22",
+          "notes": "由主工程 f1e5ad9029927b5deae8651c7272d8fd728ccd32 自动构建",
+          "file": "apkobj-mac-v0.1.22-update.zip",
+          "size": 69161373,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.22/apkobj-mac-v0.1.22-update.zip"
+        },
         {
           "version": "v0.1.17",
           "uploadedAt": "2026-05-19T08:30:29Z",
@@ -193,6 +203,26 @@
       ],
       "win": [
         {
+          "version": "v0.1.22",
+          "uploadedAt": "2026-05-20T07:27:38Z",
+          "tag": "v0.1.22",
+          "releaseName": "APKObj v0.1.22",
+          "notes": "由主工程 f1e5ad9029927b5deae8651c7272d8fd728ccd32 自动构建",
+          "file": "apkobj-win-v0.1.22-update.zip",
+          "size": 62909300,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.22/apkobj-win-v0.1.22-update.zip"
+        },
+        {
+          "version": "v0.1.22",
+          "uploadedAt": "2026-05-20T07:27:38Z",
+          "tag": "v0.1.22",
+          "releaseName": "APKObj v0.1.22",
+          "notes": "由主工程 f1e5ad9029927b5deae8651c7272d8fd728ccd32 自动构建",
+          "file": "apkobj-win-v0.1.22.zip",
+          "size": 123160070,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.22/apkobj-win-v0.1.22.zip"
+        },
+        {
           "version": "v0.1.17",
           "uploadedAt": "2026-05-19T08:30:28Z",
           "tag": "v0.1.17",
@@ -373,7 +403,7 @@
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.0/apkobj-win-v0.1.0.zip"
         }
       ],
-      "latestAt": "2026-05-19T08:30:29Z"
+      "latestAt": "2026-05-20T07:27:38Z"
     }
   ]
 }
