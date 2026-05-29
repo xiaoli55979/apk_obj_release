@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-05-29T00:10:31.128Z",
+  "generatedAt": "2026-05-29T00:10:47.514Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -101,16 +101,6 @@
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.16/apkobj-mac-v0.1.16.zip"
         },
         {
-          "version": "v0.1.11",
-          "uploadedAt": "2026-05-18T13:49:40Z",
-          "tag": "v0.1.11",
-          "releaseName": "APKObj v0.1.11",
-          "notes": "由主工程 03408e7d2e046cb4860442168881fc08bb5d2fe8 自动构建",
-          "file": "apkobj-mac-v0.1.11.zip",
-          "size": 127037376,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.11/apkobj-mac-v0.1.11.zip"
-        },
-        {
           "version": "v0.1.9",
           "uploadedAt": "2026-05-18T12:42:08Z",
           "tag": "v0.1.9",
@@ -119,16 +109,6 @@
           "file": "apkobj-mac-v0.1.9.zip",
           "size": 132146859,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.9/apkobj-mac-v0.1.9.zip"
-        },
-        {
-          "version": "v0.1.7",
-          "uploadedAt": "2026-05-18T12:04:42Z",
-          "tag": "v0.1.7",
-          "releaseName": "APKObj v0.1.7",
-          "notes": "由主工程 578024baed688c81024d2d67e1636bf619be9919 自动构建",
-          "file": "apkobj-mac-v0.1.7.zip",
-          "size": 132158887,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.7/apkobj-mac-v0.1.7.zip"
         },
         {
           "version": "v0.1.5",
@@ -273,16 +253,6 @@
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.16/apkobj-win-v0.1.16.zip"
         },
         {
-          "version": "v0.1.11",
-          "uploadedAt": "2026-05-18T13:49:39Z",
-          "tag": "v0.1.11",
-          "releaseName": "APKObj v0.1.11",
-          "notes": "由主工程 03408e7d2e046cb4860442168881fc08bb5d2fe8 自动构建",
-          "file": "apkobj-win-v0.1.11.zip",
-          "size": 122868577,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.11/apkobj-win-v0.1.11.zip"
-        },
-        {
           "version": "v0.1.9",
           "uploadedAt": "2026-05-18T12:42:09Z",
           "tag": "v0.1.9",
@@ -291,16 +261,6 @@
           "file": "apkobj-win-v0.1.9.zip",
           "size": 127974197,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.9/apkobj-win-v0.1.9.zip"
-        },
-        {
-          "version": "v0.1.7",
-          "uploadedAt": "2026-05-18T12:04:41Z",
-          "tag": "v0.1.7",
-          "releaseName": "APKObj v0.1.7",
-          "notes": "由主工程 578024baed688c81024d2d67e1636bf619be9919 自动构建",
-          "file": "apkobj-win-v0.1.7.zip",
-          "size": 127990484,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.7/apkobj-win-v0.1.7.zip"
         },
         {
           "version": "v0.1.5",
