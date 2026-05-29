@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-05-29T00:12:59.854Z",
+  "generatedAt": "2026-05-29T00:13:25.802Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -29,26 +29,6 @@
           "file": "apkobj-mac-v0.1.26-update.zip",
           "size": 69163584,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.26/apkobj-mac-v0.1.26-update.zip"
-        },
-        {
-          "version": "v0.1.25",
-          "uploadedAt": "2026-05-21T12:07:59Z",
-          "tag": "v0.1.25",
-          "releaseName": "APKObj v0.1.25",
-          "notes": "由主工程 9566c87337f68f3389c1cb5b60f5eb94f1c4570b 自动构建",
-          "file": "apkobj-mac-v0.1.25.zip",
-          "size": 127535882,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.25/apkobj-mac-v0.1.25.zip"
-        },
-        {
-          "version": "v0.1.25",
-          "uploadedAt": "2026-05-21T12:07:58Z",
-          "tag": "v0.1.25",
-          "releaseName": "APKObj v0.1.25",
-          "notes": "由主工程 9566c87337f68f3389c1cb5b60f5eb94f1c4570b 自动构建",
-          "file": "apkobj-mac-v0.1.25-update.zip",
-          "size": 69163056,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.25/apkobj-mac-v0.1.25-update.zip"
         }
       ],
       "win": [
@@ -91,26 +71,6 @@
           "file": "apkobj-win-v0.1.26-update.zip",
           "size": 63987679,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.26/apkobj-win-v0.1.26-update.zip"
-        },
-        {
-          "version": "v0.1.25",
-          "uploadedAt": "2026-05-21T12:07:59Z",
-          "tag": "v0.1.25",
-          "releaseName": "APKObj v0.1.25",
-          "notes": "由主工程 9566c87337f68f3389c1cb5b60f5eb94f1c4570b 自动构建",
-          "file": "apkobj-win-v0.1.25.zip",
-          "size": 123161178,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.25/apkobj-win-v0.1.25.zip"
-        },
-        {
-          "version": "v0.1.25",
-          "uploadedAt": "2026-05-21T12:07:57Z",
-          "tag": "v0.1.25",
-          "releaseName": "APKObj v0.1.25",
-          "notes": "由主工程 9566c87337f68f3389c1cb5b60f5eb94f1c4570b 自动构建",
-          "file": "apkobj-win-v0.1.25-update.zip",
-          "size": 62910408,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.25/apkobj-win-v0.1.25-update.zip"
         }
       ],
       "latestAt": "2026-05-26T06:09:24Z"
