@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-06-15T01:25:43.403Z",
+  "generatedAt": "2026-07-18T06:36:56.537Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -52,6 +52,26 @@
         }
       ],
       "win": [
+        {
+          "version": "v1.0.3",
+          "uploadedAt": "2026-07-18T06:36:50Z",
+          "tag": "v1.0.3",
+          "releaseName": "APKObj v1.0.3",
+          "notes": "APKObj v1.0.3\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: ccd48a72c200488c568c7faacc5f91bab65775c5\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n备注:\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-win-v1.0.3-update.zip`\n- `apkobj-win-v1.0.3.manifest.json`\n- `apkobj-win-v1.0.3.zip`\n",
+          "file": "apkobj-win-v1.0.3.zip",
+          "size": 124901951,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.3/apkobj-win-v1.0.3.zip"
+        },
+        {
+          "version": "v1.0.3",
+          "uploadedAt": "2026-07-18T06:36:47Z",
+          "tag": "v1.0.3",
+          "releaseName": "APKObj v1.0.3",
+          "notes": "APKObj v1.0.3\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: ccd48a72c200488c568c7faacc5f91bab65775c5\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n备注:\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-win-v1.0.3-update.zip`\n- `apkobj-win-v1.0.3.manifest.json`\n- `apkobj-win-v1.0.3.zip`\n",
+          "file": "apkobj-win-v1.0.3-update.zip",
+          "size": 64342105,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.3/apkobj-win-v1.0.3-update.zip"
+        },
         {
           "version": "v1.0.2",
           "uploadedAt": "2026-06-15T01:25:17Z",
@@ -153,7 +173,7 @@
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.26/apkobj-win-v0.1.26-update.zip"
         }
       ],
-      "latestAt": "2026-06-15T01:25:17Z"
+      "latestAt": "2026-07-18T06:36:50Z"
     }
   ]
 }
