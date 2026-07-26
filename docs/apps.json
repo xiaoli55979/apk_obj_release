@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-07-18T06:37:12.834Z",
+  "generatedAt": "2026-07-26T13:54:34.697Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -10,6 +10,26 @@
       "ios": [],
       "android": [],
       "mac": [
+        {
+          "version": "v1.0.6",
+          "uploadedAt": "2026-07-26T13:54:27Z",
+          "tag": "v1.0.6",
+          "releaseName": "APKObj v1.0.6",
+          "notes": "APKObj v1.0.6\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: dc383c2402f5af3f4698c3c877368ac1431276fd\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.6-update.zip`\n- `apkobj-mac-v1.0.6.manifest.json`\n- `apkobj-mac-v1.0.6.zip`\n- `apkobj-win-v1.0.6-update.zip`\n- `apkobj-win-v1.0.6.manifest.json`\n- `apkobj-win-v1.0.6.zip`\n",
+          "file": "apkobj-mac-v1.0.6.zip",
+          "size": 127557922,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.6/apkobj-mac-v1.0.6.zip"
+        },
+        {
+          "version": "v1.0.6",
+          "uploadedAt": "2026-07-26T13:54:25Z",
+          "tag": "v1.0.6",
+          "releaseName": "APKObj v1.0.6",
+          "notes": "APKObj v1.0.6\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: dc383c2402f5af3f4698c3c877368ac1431276fd\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.6-update.zip`\n- `apkobj-mac-v1.0.6.manifest.json`\n- `apkobj-mac-v1.0.6.zip`\n- `apkobj-win-v1.0.6-update.zip`\n- `apkobj-win-v1.0.6.manifest.json`\n- `apkobj-win-v1.0.6.zip`\n",
+          "file": "apkobj-mac-v1.0.6-update.zip",
+          "size": 69372383,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.6/apkobj-mac-v1.0.6-update.zip"
+        },
         {
           "version": "v1.0.0",
           "uploadedAt": "2026-06-09T00:52:22Z",
@@ -52,6 +72,26 @@
         }
       ],
       "win": [
+        {
+          "version": "v1.0.6",
+          "uploadedAt": "2026-07-26T13:54:27Z",
+          "tag": "v1.0.6",
+          "releaseName": "APKObj v1.0.6",
+          "notes": "APKObj v1.0.6\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: dc383c2402f5af3f4698c3c877368ac1431276fd\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.6-update.zip`\n- `apkobj-mac-v1.0.6.manifest.json`\n- `apkobj-mac-v1.0.6.zip`\n- `apkobj-win-v1.0.6-update.zip`\n- `apkobj-win-v1.0.6.manifest.json`\n- `apkobj-win-v1.0.6.zip`\n",
+          "file": "apkobj-win-v1.0.6.zip",
+          "size": 125110950,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.6/apkobj-win-v1.0.6.zip"
+        },
+        {
+          "version": "v1.0.6",
+          "uploadedAt": "2026-07-26T13:54:24Z",
+          "tag": "v1.0.6",
+          "releaseName": "APKObj v1.0.6",
+          "notes": "APKObj v1.0.6\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: dc383c2402f5af3f4698c3c877368ac1431276fd\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.6-update.zip`\n- `apkobj-mac-v1.0.6.manifest.json`\n- `apkobj-mac-v1.0.6.zip`\n- `apkobj-win-v1.0.6-update.zip`\n- `apkobj-win-v1.0.6.manifest.json`\n- `apkobj-win-v1.0.6.zip`\n",
+          "file": "apkobj-win-v1.0.6-update.zip",
+          "size": 64551104,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.6/apkobj-win-v1.0.6-update.zip"
+        },
         {
           "version": "v1.0.3",
           "uploadedAt": "2026-07-18T06:36:50Z",
@@ -173,7 +213,7 @@
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.26/apkobj-win-v0.1.26-update.zip"
         }
       ],
-      "latestAt": "2026-07-18T06:36:50Z"
+      "latestAt": "2026-07-26T13:54:27Z"
     }
   ]
 }
