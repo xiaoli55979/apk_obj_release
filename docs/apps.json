@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-07-26T16:17:01.424Z",
+  "generatedAt": "2026-07-26T17:15:30.270Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -12,22 +12,22 @@
       "mac": [
         {
           "version": "v1.0.7",
-          "uploadedAt": "2026-07-26T16:16:42Z",
+          "uploadedAt": "2026-07-26T17:15:27Z",
           "tag": "v1.0.7",
           "releaseName": "APKObj v1.0.7",
           "notes": "APKObj v1.0.7\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: 69511009aa640e93d710401d4fa007d3aa671667\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.7-update.zip`\n- `apkobj-mac-v1.0.7.manifest.json`\n- `apkobj-mac-v1.0.7.zip`\n- `apkobj-win-v1.0.7-update.zip`\n- `apkobj-win-v1.0.7.manifest.json`\n- `apkobj-win-v1.0.7.zip`\n",
           "file": "apkobj-mac-v1.0.7-update.zip",
-          "size": 189925294,
+          "size": 189925187,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.7/apkobj-mac-v1.0.7-update.zip"
         },
         {
           "version": "v1.0.7",
-          "uploadedAt": "2026-07-26T16:16:42Z",
+          "uploadedAt": "2026-07-26T17:15:26Z",
           "tag": "v1.0.7",
           "releaseName": "APKObj v1.0.7",
           "notes": "APKObj v1.0.7\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: 69511009aa640e93d710401d4fa007d3aa671667\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.7-update.zip`\n- `apkobj-mac-v1.0.7.manifest.json`\n- `apkobj-mac-v1.0.7.zip`\n- `apkobj-win-v1.0.7-update.zip`\n- `apkobj-win-v1.0.7.manifest.json`\n- `apkobj-win-v1.0.7.zip`\n",
           "file": "apkobj-mac-v1.0.7.zip",
-          "size": 248110833,
+          "size": 248110726,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.7/apkobj-mac-v1.0.7.zip"
         },
         {
@@ -94,22 +94,22 @@
       "win": [
         {
           "version": "v1.0.7",
-          "uploadedAt": "2026-07-26T16:16:41Z",
+          "uploadedAt": "2026-07-26T17:15:27Z",
           "tag": "v1.0.7",
           "releaseName": "APKObj v1.0.7",
           "notes": "APKObj v1.0.7\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: 69511009aa640e93d710401d4fa007d3aa671667\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.7-update.zip`\n- `apkobj-mac-v1.0.7.manifest.json`\n- `apkobj-mac-v1.0.7.zip`\n- `apkobj-win-v1.0.7-update.zip`\n- `apkobj-win-v1.0.7.manifest.json`\n- `apkobj-win-v1.0.7.zip`\n",
           "file": "apkobj-win-v1.0.7.zip",
-          "size": 237678602,
+          "size": 237678598,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.7/apkobj-win-v1.0.7.zip"
         },
         {
           "version": "v1.0.7",
-          "uploadedAt": "2026-07-26T16:16:40Z",
+          "uploadedAt": "2026-07-26T17:15:26Z",
           "tag": "v1.0.7",
           "releaseName": "APKObj v1.0.7",
           "notes": "APKObj v1.0.7\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: 69511009aa640e93d710401d4fa007d3aa671667\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.7-update.zip`\n- `apkobj-mac-v1.0.7.manifest.json`\n- `apkobj-mac-v1.0.7.zip`\n- `apkobj-win-v1.0.7-update.zip`\n- `apkobj-win-v1.0.7.manifest.json`\n- `apkobj-win-v1.0.7.zip`\n",
           "file": "apkobj-win-v1.0.7-update.zip",
-          "size": 177118756,
+          "size": 177118752,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.7/apkobj-win-v1.0.7-update.zip"
         },
         {
@@ -253,7 +253,7 @@
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.26/apkobj-win-v0.1.26-update.zip"
         }
       ],
-      "latestAt": "2026-07-26T16:16:42Z"
+      "latestAt": "2026-07-26T17:15:27Z"
     }
   ]
 }
