@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-07-26T17:15:46.857Z",
+  "generatedAt": "2026-09-03T08:13:26.130Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -92,6 +92,26 @@
         }
       ],
       "win": [
+        {
+          "version": "v1.0.10",
+          "uploadedAt": "2026-09-03T08:13:11Z",
+          "tag": "v1.0.10",
+          "releaseName": "APKObj v1.0.10",
+          "notes": "来源提交: 9b9aa6a\\n\\n- Windows: 全量包、增量包、manifest。\\n- 修复一键升级下载后无法替换旧版本的问题。\\n- 升级时停止后台引擎进程树，采用原子备份、版本自检和失败回滚。\\n- 自带 JRE、apktool、bundletool、JADX 与 Android platform-tools。\\n- macOS 资产构建完成后补充到同一版本。",
+          "file": "apkobj-win-v1.0.10.zip",
+          "size": 237103592,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.10/apkobj-win-v1.0.10.zip"
+        },
+        {
+          "version": "v1.0.10",
+          "uploadedAt": "2026-09-03T08:12:42Z",
+          "tag": "v1.0.10",
+          "releaseName": "APKObj v1.0.10",
+          "notes": "来源提交: 9b9aa6a\\n\\n- Windows: 全量包、增量包、manifest。\\n- 修复一键升级下载后无法替换旧版本的问题。\\n- 升级时停止后台引擎进程树，采用原子备份、版本自检和失败回滚。\\n- 自带 JRE、apktool、bundletool、JADX 与 Android platform-tools。\\n- macOS 资产构建完成后补充到同一版本。",
+          "file": "apkobj-win-v1.0.10-update.zip",
+          "size": 176537201,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.10/apkobj-win-v1.0.10-update.zip"
+        },
         {
           "version": "v1.0.7",
           "uploadedAt": "2026-07-26T17:15:27Z",
@@ -253,7 +273,7 @@
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.26/apkobj-win-v0.1.26-update.zip"
         }
       ],
-      "latestAt": "2026-07-26T17:15:27Z"
+      "latestAt": "2026-09-03T08:13:11Z"
     }
   ]
 }
