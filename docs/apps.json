@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-09-03T08:38:07.537Z",
+  "generatedAt": "2026-09-15T08:42:06.154Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -10,6 +10,26 @@
       "ios": [],
       "android": [],
       "mac": [
+        {
+          "version": "v1.0.11",
+          "uploadedAt": "2026-09-15T08:42:03Z",
+          "tag": "v1.0.11",
+          "releaseName": "APKObj v1.0.11",
+          "notes": "APKObj v1.0.11\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: be52bdc3f16f142146e28fa86fff00e1f59024dc\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- 修复 Windows 一键升级下载后无法替换旧版本的问题，增加进程树退出、原子备份、版本自检与失败回滚。\n- 运行日志改为原子落盘并校验内容，写入异常会进入界面事件流和 engine.log。\n- 丰田主题预修复失败时保留 apktool 完整诊断并跳过可选修复，继续执行核心加固。\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.11-update.zip`\n- `apkobj-mac-v1.0.11.manifest.json`\n- `apkobj-mac-v1.0.11.zip`\n- `apkobj-win-v1.0.11-update.zip`\n- `apkobj-win-v1.0.11.manifest.json`\n- `apkobj-win-v1.0.11.zip`\n",
+          "file": "apkobj-mac-v1.0.11.zip",
+          "size": 248331973,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.11/apkobj-mac-v1.0.11.zip"
+        },
+        {
+          "version": "v1.0.11",
+          "uploadedAt": "2026-09-15T08:42:00Z",
+          "tag": "v1.0.11",
+          "releaseName": "APKObj v1.0.11",
+          "notes": "APKObj v1.0.11\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: be52bdc3f16f142146e28fa86fff00e1f59024dc\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- 修复 Windows 一键升级下载后无法替换旧版本的问题，增加进程树退出、原子备份、版本自检与失败回滚。\n- 运行日志改为原子落盘并校验内容，写入异常会进入界面事件流和 engine.log。\n- 丰田主题预修复失败时保留 apktool 完整诊断并跳过可选修复，继续执行核心加固。\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.11-update.zip`\n- `apkobj-mac-v1.0.11.manifest.json`\n- `apkobj-mac-v1.0.11.zip`\n- `apkobj-win-v1.0.11-update.zip`\n- `apkobj-win-v1.0.11.manifest.json`\n- `apkobj-win-v1.0.11.zip`\n",
+          "file": "apkobj-mac-v1.0.11-update.zip",
+          "size": 190134029,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.11/apkobj-mac-v1.0.11-update.zip"
+        },
         {
           "version": "v1.0.7",
           "uploadedAt": "2026-07-26T17:15:27Z",
@@ -92,6 +112,26 @@
         }
       ],
       "win": [
+        {
+          "version": "v1.0.11",
+          "uploadedAt": "2026-09-15T08:42:03Z",
+          "tag": "v1.0.11",
+          "releaseName": "APKObj v1.0.11",
+          "notes": "APKObj v1.0.11\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: be52bdc3f16f142146e28fa86fff00e1f59024dc\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- 修复 Windows 一键升级下载后无法替换旧版本的问题，增加进程树退出、原子备份、版本自检与失败回滚。\n- 运行日志改为原子落盘并校验内容，写入异常会进入界面事件流和 engine.log。\n- 丰田主题预修复失败时保留 apktool 完整诊断并跳过可选修复，继续执行核心加固。\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.11-update.zip`\n- `apkobj-mac-v1.0.11.manifest.json`\n- `apkobj-mac-v1.0.11.zip`\n- `apkobj-win-v1.0.11-update.zip`\n- `apkobj-win-v1.0.11.manifest.json`\n- `apkobj-win-v1.0.11.zip`\n",
+          "file": "apkobj-win-v1.0.11.zip",
+          "size": 237105223,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.11/apkobj-win-v1.0.11.zip"
+        },
+        {
+          "version": "v1.0.11",
+          "uploadedAt": "2026-09-15T08:42:00Z",
+          "tag": "v1.0.11",
+          "releaseName": "APKObj v1.0.11",
+          "notes": "APKObj v1.0.11\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: be52bdc3f16f142146e28fa86fff00e1f59024dc\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- 修复 Windows 一键升级下载后无法替换旧版本的问题，增加进程树退出、原子备份、版本自检与失败回滚。\n- 运行日志改为原子落盘并校验内容，写入异常会进入界面事件流和 engine.log。\n- 丰田主题预修复失败时保留 apktool 完整诊断并跳过可选修复，继续执行核心加固。\n- Windows 包包含丰田本地主题兜底修复相关代码。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.11-update.zip`\n- `apkobj-mac-v1.0.11.manifest.json`\n- `apkobj-mac-v1.0.11.zip`\n- `apkobj-win-v1.0.11-update.zip`\n- `apkobj-win-v1.0.11.manifest.json`\n- `apkobj-win-v1.0.11.zip`\n",
+          "file": "apkobj-win-v1.0.11-update.zip",
+          "size": 176538832,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.11/apkobj-win-v1.0.11-update.zip"
+        },
         {
           "version": "v1.0.10",
           "uploadedAt": "2026-09-03T08:13:11Z",
@@ -273,7 +313,7 @@
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v0.1.26/apkobj-win-v0.1.26-update.zip"
         }
       ],
-      "latestAt": "2026-09-03T08:13:11Z"
+      "latestAt": "2026-09-15T08:42:03Z"
     }
   ]
 }
