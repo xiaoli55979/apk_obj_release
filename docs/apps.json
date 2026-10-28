@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-10-28T15:36:59.487Z",
+  "generatedAt": "2026-10-28T15:37:15.505Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -10,6 +10,18 @@
       "ios": [],
       "android": [],
       "mac": [
+        {
+          "bundleId": "com.apkobj.tools",
+          "version": "1.0.12",
+          "uploadedAt": "2026-10-28T15:37:00Z",
+          "tag": "v1.0.12",
+          "releaseName": "APKObj v1.0.12",
+          "notes": "APKObj v1.0.12\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: 28023075798ae5abfcf6d26cbd50f07a018f2b0b\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- 原生库压缩默认开启，旧项目缺少该配置时也会启用；仍使用原来的一次运行、一个 APK 流程。\n- 支持每包自动选择或固定原生库压缩级别；兼容模式暂停该项调整，并保留保存的选择。\n- 原生库压缩逐库校验解压内容，压缩编码变化不代表原生机器码变化。\n- 修复工具箱处理失败后重复执行命令，改善按钮、卡片和拖入区的键盘焦点与减少动画支持。\n- macOS 最低版本为 12.0，GUI 与内置 JRE 使用相同架构。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.12-update.zip`\n- `apkobj-mac-v1.0.12.manifest.json`\n- `apkobj-mac-v1.0.12.zip`\n- `apkobj-win-v1.0.12-update.zip`\n- `apkobj-win-v1.0.12.manifest.json`\n- `apkobj-win-v1.0.12.zip`\n",
+          "file": "apkobj-mac-v1.0.12.zip",
+          "size": 238423055,
+          "downloadCount": 0,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.12/apkobj-mac-v1.0.12.zip"
+        },
         {
           "bundleId": "com.apkobj.tools",
           "version": "1.0.11",
@@ -74,7 +86,7 @@
         }
       ],
       "showPlatformBundleIds": false,
-      "latestAt": "2026-10-28T15:36:56Z"
+      "latestAt": "2026-10-28T15:37:00Z"
     }
   ]
 }
