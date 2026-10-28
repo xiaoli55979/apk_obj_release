@@ -2,12 +2,30 @@
   const PLATFORM_META = {
     ios:     { btnLabel: 'iOS 安装',     qrTitle: '用 iOS 手机扫码安装',   hint: '仅白名单（UDID）设备可安装', histLabel: '安装', histTitle: 'iOS 历史版本' },
     android: { btnLabel: 'Android 安装', qrTitle: '用 Android 手机扫码下载', hint: '下载后请允许"未知来源"安装', histLabel: '下载', histTitle: 'Android 历史版本' },
-    mac:     { btnLabel: 'Mac 下载',     qrTitle: '扫码在 Mac 上下载',      hint: '解压后若提示"已损坏"打不开, 终端跑一行: xattr -cr /路径/apkobj_gui.app  (Gatekeeper 标记, 一次性)', histLabel: '下载', histTitle: 'Mac 历史版本' },
+    mac:     { btnLabel: 'Mac 下载',     qrTitle: '扫码在 Mac 上下载',      hint: '解压后将 apkobj_gui.app 放入应用程序；macOS 12 或更新版本', histLabel: '下载', histTitle: 'Mac 历史版本' },
     win:     { btnLabel: 'Windows 下载', qrTitle: '扫码在 Windows 上下载',  hint: '.exe 直接运行；.zip 解压后运行',   histLabel: '下载', histTitle: 'Windows 历史版本' }
   };
 
   const WIN_EXE_META = { btnLabel: 'Windows 安装版', qrTitle: '扫码下载 Windows 安装版', hint: '.exe 双击运行安装程序', histLabel: '安装', histTitle: 'Windows 安装版历史' };
   const WIN_ZIP_META = { btnLabel: 'Windows 便携版', qrTitle: '扫码下载 Windows 便携版', hint: '.zip 解压后直接运行',   histLabel: '下载', histTitle: 'Windows 便携版历史' };
+
+  function vlabel(version) {
+    return 'v' + String(version || '').replace(/^v(?=\d)/i, '');
+  }
+
+  function isInstallEntry(entry, platform) {
+    const file = String(entry?.file || '');
+    return /\.(ipa|apk|dmg|exe|zip)$/i.test(file)
+      && !(['mac', 'win'].includes(platform) && /(?:^|[-_.])(update|incremental|delta)(?:[-_.]|$)/i.test(file));
+  }
+
+  function normalizeApp(app) {
+    const normalized = { ...app };
+    for (const platform of ['ios', 'android', 'mac', 'win']) {
+      normalized[platform] = (Array.isArray(app[platform]) ? app[platform] : []).filter(entry => isInstallEntry(entry, platform));
+    }
+    return normalized;
+  }
 
   const isExe = (e) => /\.exe$/i.test(e.file || '');
   const isZip = (e) => /\.zip$/i.test(e.file || '');
@@ -24,18 +42,23 @@
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
   }
 
-  // 版本号统一加 v 前缀, 但 entry.version 如果已经是 v 开头就不重复 (避免 vv0.1.0)
-  function vlabel(version) {
-    const s = String(version || '');
-    return /^v\d/i.test(s) ? s : 'v' + s;
-  }
-
   function fmtSize(bytes) {
     if (!bytes) return '';
     const units = ['B', 'KB', 'MB', 'GB'];
     let v = bytes, i = 0;
     while (v >= 1024 && i < units.length - 1) { v /= 1024; i++; }
     return `${v.toFixed(v >= 10 ? 0 : 1)} ${units[i]}`;
+  }
+
+  function countValue(value) {
+    const n = Number(value);
+    return Number.isFinite(n) && n >= 0 ? n : null;
+  }
+
+  function fmtDownloads(count, label = '下载') {
+    const n = countValue(count);
+    if (n === null) return '';
+    return `${label} ${n.toLocaleString('zh-CN')} 次`;
   }
 
   function iconFallback(name) {
@@ -57,16 +80,37 @@
     return iconFallback(app.name);
   }
 
-  function platformBtn(platform, entry, override) {
+  function platformBtn(platform, entry, override, showBundleId = false) {
     const meta = { ...PLATFORM_META[platform], ...(override || {}) };
     const wrap = document.createElement('div');
     wrap.className = `btn-group btn-group-${platform}`;
 
     const a = document.createElement('a');
     a.className = `btn btn-${platform}`;
-    a.innerHTML = `${meta.btnLabel}<small>${vlabel(entry.version)} · ${fmtSize(entry.size)}</small>`;
+    const metaLine = [vlabel(entry.version), fmtSize(entry.size)].filter(Boolean).join(' · ');
+    const timeLine = fmtTime(entry.uploadedAt);
+    const downloadLine = fmtDownloads(entry.downloadCount);
+    const label = document.createElement('span');
+    label.className = 'btn-label';
+    label.textContent = meta.btnLabel;
+    const details = document.createElement('small');
+    details.className = 'btn-meta';
+    details.textContent = [metaLine, timeLine && `更新于 ${timeLine}`, downloadLine].filter(Boolean).join('\n');
+    a.append(label, details);
+    if (showBundleId && entry.bundleId) {
+      const bundle = document.createElement('small');
+      bundle.className = 'btn-bundle';
+      bundle.textContent = `包名: ${entry.bundleId}`;
+      bundle.title = entry.bundleId;
+      a.appendChild(bundle);
+    }
     const url = entryUrl(platform, entry);
     a.href = url;
+    // 安卓:用 download 属性 + rel 把链接锁定为"下载该文件",避免某些浏览器顺手预读其它链接
+    if (platform === 'android' && entry.file) {
+      a.setAttribute('download', entry.file);
+      a.rel = 'noopener';
+    }
 
     const qr = document.createElement('button');
     qr.type = 'button';
@@ -74,7 +118,7 @@
     qr.title = '扫码下载';
     qr.setAttribute('aria-label', '扫码下载');
     qr.innerHTML = qrIconSvg();
-    qr.addEventListener('click', () => openQr(meta.qrTitle, url, meta.hint));
+    qr.addEventListener('click', (ev) => { ev.stopPropagation(); openQr(meta.qrTitle, url, meta.hint); });
 
     wrap.append(a, qr);
     return wrap;
@@ -102,25 +146,32 @@
       ver.textContent = vlabel(e.version);
       const when = document.createElement('span');
       when.className = 'when';
-      when.textContent = fmtTime(e.uploadedAt) + ' · ' + fmtSize(e.size);
+      when.textContent = [fmtTime(e.uploadedAt), fmtSize(e.size), fmtDownloads(e.downloadCount)]
+        .filter(Boolean)
+        .join(' · ');
       const url = entryUrl(platform, e);
       const a = document.createElement('a');
       a.textContent = meta.histLabel;
       a.href = url;
+      if (platform === 'android' && e.file) {
+        a.setAttribute('download', e.file);
+        a.rel = 'noopener';
+      }
       const qr = document.createElement('button');
       qr.type = 'button';
       qr.className = 'history-qr';
       qr.title = '扫码' + meta.histLabel;
       qr.setAttribute('aria-label', '扫码' + meta.histLabel);
       qr.innerHTML = qrIconSvg();
-      qr.addEventListener('click', () => openQr('扫码' + meta.histLabel + ' ' + vlabel(e.version), url, ''));
+      qr.addEventListener('click', (ev) => { ev.stopPropagation(); openQr('扫码' + meta.histLabel + ' ' + vlabel(e.version), url, meta.hint); });
       row.append(ver, when, a, qr);
       wrap.appendChild(row);
     });
     return wrap;
   }
 
-  function renderCard(app) {
+  function renderCard(rawApp) {
+    const app = normalizeApp(rawApp);
     const card = document.createElement('article');
     card.className = 'card';
 
@@ -147,8 +198,8 @@
     const winOther = win.filter(e => !isExe(e) && !isZip(e));
     const platforms = document.createElement('div');
     platforms.className = 'platforms';
-    if (app.ios[0]) platforms.appendChild(platformBtn('ios', app.ios[0]));
-    if (app.android[0]) platforms.appendChild(platformBtn('android', app.android[0]));
+    if (app.ios[0]) platforms.appendChild(platformBtn('ios', app.ios[0], null, app.showPlatformBundleIds));
+    if (app.android[0]) platforms.appendChild(platformBtn('android', app.android[0], null, app.showPlatformBundleIds));
     if (mac[0]) platforms.appendChild(platformBtn('mac', mac[0]));
     if (winExe[0]) platforms.appendChild(platformBtn('win', winExe[0], WIN_EXE_META));
     if (winZip[0]) platforms.appendChild(platformBtn('win', winZip[0], WIN_ZIP_META));
@@ -160,7 +211,9 @@
     if (hasHistory) {
       const toggle = document.createElement('button');
       toggle.className = 'history-toggle';
-      toggle.textContent = '▸ 历史版本';
+      toggle.textContent = '历史版本';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-expanded', 'false');
       const history = document.createElement('div');
       history.className = 'history';
       history.hidden = true;
@@ -178,7 +231,8 @@
       if (winOtherHist) history.appendChild(winOtherHist);
       toggle.addEventListener('click', () => {
         history.hidden = !history.hidden;
-        toggle.textContent = history.hidden ? '▸ 历史版本' : '▾ 收起';
+        toggle.textContent = history.hidden ? '历史版本' : '收起历史版本';
+        toggle.setAttribute('aria-expanded', String(!history.hidden));
       });
       card.append(toggle, history);
     }
@@ -186,7 +240,10 @@
     return card;
   }
 
+  let previousFocus = null;
+
   function openQr(title, url, hint) {
+    previousFocus = document.activeElement;
     const modal = $('#qr-modal');
     $('#qr-title').textContent = title;
     $('#qr-hint').textContent = hint || '';
@@ -202,10 +259,26 @@
       canvasWrap.textContent = url;
     }
     modal.hidden = false;
+    for (const region of $$('.site-header, #app-list, .site-footer')) region.inert = true;
+    $('.btn-close', modal).focus();
+  }
+
+  function closeQr() {
+    $('#qr-modal').hidden = true;
+    for (const region of $$('.site-header, #app-list, .site-footer')) region.inert = false;
+    previousFocus?.focus();
   }
 
   document.addEventListener('click', (e) => {
-    if (e.target.closest('[data-close]')) $('#qr-modal').hidden = true;
+    if (e.target.closest('[data-close]')) closeQr();
+  });
+  document.addEventListener('keydown', (e) => {
+    if ($('#qr-modal').hidden) return;
+    if (e.key === 'Escape') closeQr();
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      $('.btn-close', $('#qr-modal')).focus();
+    }
   });
 
   async function load() {
@@ -220,18 +293,25 @@
       if (data.generatedAt) {
         $('#generated-at').textContent = '更新于 ' + fmtTime(data.generatedAt);
       }
+      // 给 icon URL 拼上 generatedAt 作 cache buster,避免浏览器拿到旧的(可能损坏的)缓存
+      const iconV = encodeURIComponent(data.generatedAt || Date.now());
+      const apps = Array.isArray(data.apps) ? data.apps : [];
+      apps.forEach(a => { if (a.icon) a.icon += (a.icon.includes('?') ? '&' : '?') + 'v=' + iconV; });
       const list = $('#app-list');
       list.innerHTML = '';
-      if (!data.apps || !data.apps.length) {
+      if (!apps.length) {
         const empty = document.createElement('div');
         empty.className = 'empty';
-        empty.textContent = '还没有任何 App，把 .ipa / .apk 放进 docs/packages/ 再 push 即可。';
+        empty.textContent = '暂无可下载的安装包，请稍后再试。';
         list.appendChild(empty);
         return;
       }
-      data.apps.forEach(app => list.appendChild(renderCard(app)));
+      apps.forEach(app => list.appendChild(renderCard(app)));
     } catch (err) {
-      $('#app-list').innerHTML = `<div class="empty">加载失败: ${err.message}</div>`;
+      const empty = document.createElement('div');
+      empty.className = 'empty';
+      empty.textContent = `加载失败: ${err.message}`;
+      $('#app-list').replaceChildren(empty);
     }
   }
 

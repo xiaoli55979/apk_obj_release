@@ -5,9 +5,17 @@
   "pcMatchers": [
     {
       "bundleId": "com.apkobj.tools",
-      "displayName": "APKObj",
-      "iconUrl": "assets/icons/apkobj.png",
-      "prefixes": ["apkobj"]
+      "prefixes": [
+        "apkobj"
+      ]
+    }
+  ],
+  "maxVersionsPerApp": 3,
+  "appMetadata": [
+    {
+      "bundleId": "com.apkobj.tools",
+      "name": "APKObj",
+      "icon": "assets/icons/apkobj.png"
     }
   ]
 }

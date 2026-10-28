@@ -1,15 +1,19 @@
 {
-  "name": "ipa-install",
+  "name": "apkobj-release",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Self-hosted iOS/Android OTA distribution page on GitHub Pages",
+  "description": "APKObj macOS and Windows download page",
   "scripts": {
-    "build": "node scripts/build-metadata.mjs"
+    "build": "node scripts/build-metadata.mjs",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "adm-zip": "^0.5.16",
     "app-info-parser": "^1.1.6",
+    "cgbi-to-png": "^1.0.7",
+    "pe-library": "^1.0.1",
+    "resedit": "^2.0.3",
     "simple-plist": "^1.4.0"
   }
 }
