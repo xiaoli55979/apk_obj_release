@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-11-05T13:13:41.193Z",
+  "generatedAt": "2026-11-06T03:21:23.266Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -12,6 +12,18 @@
       "mac": [
         {
           "bundleId": "com.apkobj.tools",
+          "version": "1.0.20",
+          "uploadedAt": "2026-11-06T03:18:13Z",
+          "tag": "v1.0.20",
+          "releaseName": "APKObj v1.0.20",
+          "notes": "APKObj v1.0.20\n\n- 本地风险评分改为只写日志和报告，高分或扫描异常不再阻断处理、上传或成功结果。\n- 历史配置中的评分阻断开关自动失效，保存固定关闭；完整加固流程继续默认执行。\n- 独立自检的本地模式及自动降级模式首轮交付产物；明确选择的 VirusTotal 检测保留原有判定。\n- 打包、签名、技术装机和真实上传错误仍正常报错。\n- Mac 完整包补入“首次打不开请双击我.command”，解决此前正式 ZIP 漏带首次启动处理脚本的问题。\n\n完整安装包：\n\n- [Mac（Apple Silicon，macOS 12.0+）](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-mac-v1.0.20.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-win-v1.0.20.zip)\n\nMac 使用本地签名，未做 Apple 公证。首次打开被系统拦截时，可运行完整包内同目录的“首次打不开请双击我.command”；脚本只清理 APKObj 的下载隔离标记。\n\n已通过引擎 140 项、桌面端 77 项测试和静态分析。已验证同一个实际源包高分仍可成功处理，本机测试存储收到的产物摘要与最终签名 APK 一致，真实上传错误仍记为失败。Mac 已完成实际发布 ZIP 的严格验签、版本、架构、包内工具及启动检查；Windows 已通过构建和升级 helper 真实替换测试。未完成 Windows 和 Android 真机业务回归。\n\n源码提交：c75af80d6e5b85ee50bbe70bc2f2c14f33e2dc97\n",
+          "file": "apkobj-mac-v1.0.20.zip",
+          "size": 238771737,
+          "downloadCount": 0,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-mac-v1.0.20.zip"
+        },
+        {
+          "bundleId": "com.apkobj.tools",
           "version": "1.0.19",
           "uploadedAt": "2026-11-05T13:10:56Z",
           "tag": "v1.0.19",
@@ -19,7 +31,7 @@
           "notes": "APKObj v1.0.19\n\nMac 旧版本请手动下载完整包，退出应用后覆盖安装。Mac 包适用于 Apple Silicon，要求 macOS 12.0 或更高版本。\n\n- 移除兼容模式和加固步骤开关，项目、任务、自动签名和指定证书入口固定执行完整加固流程；旧项目的关闭配置自动归一。\n- 保留证书、包名、业务能力清理、装机测试和上传配置，修复保留原包名时的相对 Application 类名解析。\n- 补齐 V4 .idsig 文件生成和验证，签名或资源处理失败时保留已有产物，阻止输出路径覆盖证书。\n- 增加资源路径保留规则、改名冲突检查及按源包和产物摘要归档的映射；PNG 处理保留原像素和数据块。\n- 修复 Mac ZIP 解压后的签名和执行权限，升级校验发行签名，失败时恢复旧安装；更新下载使用系统证书校验。\n\n完整安装包：\n\n- [Mac](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-mac-v1.0.19.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-win-v1.0.19.zip)\n\n已通过引擎 129 项测试、桌面端 73 项测试、静态分析和双平台构建。Mac 已检查实际 ZIP 解压后的严格验签、架构、内置工具和启动；Windows 已通过升级 helper 的真实替换测试。未完成 Windows 和 Android 真机业务回归。\n\n源码提交：232403e51850dc11925fedae3439672ec993f613\n",
           "file": "apkobj-mac-v1.0.19.zip",
           "size": 238767943,
-          "downloadCount": 0,
+          "downloadCount": 4,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-mac-v1.0.19.zip"
         },
         {
@@ -33,21 +45,21 @@
           "size": 238628675,
           "downloadCount": 2,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.17/apkobj-mac-v1.0.17.zip"
-        },
-        {
-          "bundleId": "com.apkobj.tools",
-          "version": "1.0.14",
-          "uploadedAt": "2026-11-02T04:51:30Z",
-          "tag": "v1.0.14",
-          "releaseName": "APKObj v1.0.14",
-          "notes": "APKObj v1.0.14\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: d688bc95f96acf165f272b1a5622b73e785cff9f\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- 修复未声明 application@android:name 的 APK 加固失败，普通壳和多态壳均可自动补入壳入口，并保留默认 Application 行为。\n- Manifest 属性定点写入，保留共用字符串的 Activity、标签及其他配置，兼容 UTF-8、UTF-16 和 typed-only 字符串。\n- 普通壳同步处理 AndroidX 组件工厂，避免原 DEX 解密前因早期类加载失败而崩溃。\n- 修复 Windows 打包版本号截断，确保升级自检记录完整版本号。\n- 已用问题原包验证完整加固、签名、华为 Android 12 真机安装、两次冷启动及首页加载；未覆盖登录和全部业务功能。\n- macOS 最低版本为 12.0，GUI 与内置 JRE 使用相同架构。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.14-update.zip`\n- `apkobj-mac-v1.0.14.manifest.json`\n- `apkobj-mac-v1.0.14.zip`\n- `apkobj-win-v1.0.14-update.zip`\n- `apkobj-win-v1.0.14.manifest.json`\n- `apkobj-win-v1.0.14.zip`\n",
-          "file": "apkobj-mac-v1.0.14.zip",
-          "size": 238587737,
-          "downloadCount": 3,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.14/apkobj-mac-v1.0.14.zip"
         }
       ],
       "win": [
+        {
+          "bundleId": "com.apkobj.tools",
+          "version": "1.0.20",
+          "uploadedAt": "2026-11-06T03:18:17Z",
+          "tag": "v1.0.20",
+          "releaseName": "APKObj v1.0.20",
+          "notes": "APKObj v1.0.20\n\n- 本地风险评分改为只写日志和报告，高分或扫描异常不再阻断处理、上传或成功结果。\n- 历史配置中的评分阻断开关自动失效，保存固定关闭；完整加固流程继续默认执行。\n- 独立自检的本地模式及自动降级模式首轮交付产物；明确选择的 VirusTotal 检测保留原有判定。\n- 打包、签名、技术装机和真实上传错误仍正常报错。\n- Mac 完整包补入“首次打不开请双击我.command”，解决此前正式 ZIP 漏带首次启动处理脚本的问题。\n\n完整安装包：\n\n- [Mac（Apple Silicon，macOS 12.0+）](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-mac-v1.0.20.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-win-v1.0.20.zip)\n\nMac 使用本地签名，未做 Apple 公证。首次打开被系统拦截时，可运行完整包内同目录的“首次打不开请双击我.command”；脚本只清理 APKObj 的下载隔离标记。\n\n已通过引擎 140 项、桌面端 77 项测试和静态分析。已验证同一个实际源包高分仍可成功处理，本机测试存储收到的产物摘要与最终签名 APK 一致，真实上传错误仍记为失败。Mac 已完成实际发布 ZIP 的严格验签、版本、架构、包内工具及启动检查；Windows 已通过构建和升级 helper 真实替换测试。未完成 Windows 和 Android 真机业务回归。\n\n源码提交：c75af80d6e5b85ee50bbe70bc2f2c14f33e2dc97\n",
+          "file": "apkobj-win-v1.0.20.zip",
+          "size": 237360724,
+          "downloadCount": 0,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-win-v1.0.20.zip"
+        },
         {
           "bundleId": "com.apkobj.tools",
           "version": "1.0.19",
@@ -57,7 +69,7 @@
           "notes": "APKObj v1.0.19\n\nMac 旧版本请手动下载完整包，退出应用后覆盖安装。Mac 包适用于 Apple Silicon，要求 macOS 12.0 或更高版本。\n\n- 移除兼容模式和加固步骤开关，项目、任务、自动签名和指定证书入口固定执行完整加固流程；旧项目的关闭配置自动归一。\n- 保留证书、包名、业务能力清理、装机测试和上传配置，修复保留原包名时的相对 Application 类名解析。\n- 补齐 V4 .idsig 文件生成和验证，签名或资源处理失败时保留已有产物，阻止输出路径覆盖证书。\n- 增加资源路径保留规则、改名冲突检查及按源包和产物摘要归档的映射；PNG 处理保留原像素和数据块。\n- 修复 Mac ZIP 解压后的签名和执行权限，升级校验发行签名，失败时恢复旧安装；更新下载使用系统证书校验。\n\n完整安装包：\n\n- [Mac](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-mac-v1.0.19.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-win-v1.0.19.zip)\n\n已通过引擎 129 项测试、桌面端 73 项测试、静态分析和双平台构建。Mac 已检查实际 ZIP 解压后的严格验签、架构、内置工具和启动；Windows 已通过升级 helper 的真实替换测试。未完成 Windows 和 Android 真机业务回归。\n\n源码提交：232403e51850dc11925fedae3439672ec993f613\n",
           "file": "apkobj-win-v1.0.19.zip",
           "size": 237251746,
-          "downloadCount": 0,
+          "downloadCount": 4,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-win-v1.0.19.zip"
         },
         {
@@ -71,22 +83,10 @@
           "size": 237223083,
           "downloadCount": 1,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.17/apkobj-win-v1.0.17.zip"
-        },
-        {
-          "bundleId": "com.apkobj.tools",
-          "version": "1.0.14",
-          "uploadedAt": "2026-11-02T04:51:29Z",
-          "tag": "v1.0.14",
-          "releaseName": "APKObj v1.0.14",
-          "notes": "APKObj v1.0.14\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: d688bc95f96acf165f272b1a5622b73e785cff9f\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 包含自带 JRE、apktool、bundletool、JADX 与 Android platform-tools,运行时不依赖宿主机安装。\n- 修复未声明 application@android:name 的 APK 加固失败，普通壳和多态壳均可自动补入壳入口，并保留默认 Application 行为。\n- Manifest 属性定点写入，保留共用字符串的 Activity、标签及其他配置，兼容 UTF-8、UTF-16 和 typed-only 字符串。\n- 普通壳同步处理 AndroidX 组件工厂，避免原 DEX 解密前因早期类加载失败而崩溃。\n- 修复 Windows 打包版本号截断，确保升级自检记录完整版本号。\n- 已用问题原包验证完整加固、签名、华为 Android 12 真机安装、两次冷启动及首页加载；未覆盖登录和全部业务功能。\n- macOS 最低版本为 12.0，GUI 与内置 JRE 使用相同架构。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.14-update.zip`\n- `apkobj-mac-v1.0.14.manifest.json`\n- `apkobj-mac-v1.0.14.zip`\n- `apkobj-win-v1.0.14-update.zip`\n- `apkobj-win-v1.0.14.manifest.json`\n- `apkobj-win-v1.0.14.zip`\n",
-          "file": "apkobj-win-v1.0.14.zip",
-          "size": 237182083,
-          "downloadCount": 2,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.14/apkobj-win-v1.0.14.zip"
         }
       ],
       "showPlatformBundleIds": false,
-      "latestAt": "2026-11-05T13:10:56Z"
+      "latestAt": "2026-11-06T03:18:17Z"
     }
   ]
 }
