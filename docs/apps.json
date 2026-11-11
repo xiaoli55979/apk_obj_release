@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-11-11T08:17:18.309Z",
+  "generatedAt": "2026-11-11T09:29:49.228Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -12,6 +12,18 @@
       "mac": [
         {
           "bundleId": "com.apkobj.tools",
+          "version": "1.0.22",
+          "uploadedAt": "2026-11-11T09:27:45Z",
+          "tag": "v1.0.22",
+          "releaseName": "APKObj v1.0.22",
+          "notes": "项目运行历史现在按 ABI 显示本次 SO 就地壳实际处理的库数量。展开一条记录即可查看；没有选择目标库时会显示“未配置目标库”。\n\n命令行启用 VirusTotal 自检时，每次只构建一个 APK。检测未通过或服务不可用时，命令返回失败并保留已有输出。普通项目打包中的本地评分仍只写入报告。引擎异常上报已移除原始命令行参数，避免上传参数中的密钥。\n\nmacOS 和 Windows 均提供完整包及应用内更新包。首次安装请下载对应平台文件名不含 `-update` 的 ZIP。macOS 包适用于 Apple 芯片，最低支持 macOS 12，使用本地签名，未经 Apple 公证。\n",
+          "file": "apkobj-mac-v1.0.22.zip",
+          "size": 239101605,
+          "downloadCount": 0,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.22/apkobj-mac-v1.0.22.zip"
+        },
+        {
+          "bundleId": "com.apkobj.tools",
           "version": "1.0.21",
           "uploadedAt": "2026-11-11T08:13:09Z",
           "tag": "v1.0.21",
@@ -19,7 +31,7 @@
           "notes": "APKObj v1.0.21\n\n- 新增原生库审核和调试信息剥离，保留 Flutter 核心库及带自校验的 SDK 内容。\n- 项目配置可按库名和 ABI 选择 SO 就地壳，运行历史可打开逐库报告，查看处理结果和保留原因。\n- 修复原生库输出失败时的备份恢复；恢复未完成时保留旧文件备份。\n- 损坏或越界的 ELF 记录为无法解析并保留原库；符号和调试信息剥离选项分别生效，保留节表和符号引用。\n- 资源表重写后增加结构校验，修复后续原生库处理覆盖前序压缩效果的问题。\n- 修复检查更新和下载安装包的连接证书问题，补充网络、超时及版本信息错误提示。\n\n完整安装包：\n\n- [Mac（Apple Silicon，macOS 12.0+）](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.21/apkobj-mac-v1.0.21.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.21/apkobj-win-v1.0.21.zip)\n\n安装包内置 JRE、apktool、bundletool、JADX 和 Android platform-tools。Mac 使用本地签名，未做 Apple 公证；首次打开被系统拦截时，可运行完整包同目录的“首次打不开请双击我.command”。\n\n本地已通过 196 项引擎测试、101 项桌面端测试、静态分析和 Mac 调试构建。真实 APK 完成审核、剥离、指定库就地壳和签名，20 个受保护库的内容保持不变，逐库报告和历史记录可读取；评分 65 时仍成功交付。实际 Mac 发行包内置引擎复验同一源包，评分 68 时成功交付，V2/V3 签名核验通过。\n\nMac 和 Windows 正式构建及升级替换测试通过。Mac 实际发行 ZIP 的严格签名、版本、架构、内置工具和界面启动检查通过；完整包、增量包及清单逐项核对大小和 SHA-256。未完成 Windows 桌面和 Android 真机业务回归。\n\n源码提交：ede3a8556c93789c67bd29f80e32765997b3e446\n",
           "file": "apkobj-mac-v1.0.21.zip",
           "size": 239096600,
-          "downloadCount": 0,
+          "downloadCount": 2,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.21/apkobj-mac-v1.0.21.zip"
         },
         {
@@ -33,21 +45,21 @@
           "size": 238771737,
           "downloadCount": 4,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-mac-v1.0.20.zip"
-        },
-        {
-          "bundleId": "com.apkobj.tools",
-          "version": "1.0.19",
-          "uploadedAt": "2026-11-05T13:10:56Z",
-          "tag": "v1.0.19",
-          "releaseName": "APKObj v1.0.19",
-          "notes": "APKObj v1.0.19\n\nMac 旧版本请手动下载完整包，退出应用后覆盖安装。Mac 包适用于 Apple Silicon，要求 macOS 12.0 或更高版本。\n\n- 移除兼容模式和加固步骤开关，项目、任务、自动签名和指定证书入口固定执行完整加固流程；旧项目的关闭配置自动归一。\n- 保留证书、包名、业务能力清理、装机测试和上传配置，修复保留原包名时的相对 Application 类名解析。\n- 补齐 V4 .idsig 文件生成和验证，签名或资源处理失败时保留已有产物，阻止输出路径覆盖证书。\n- 增加资源路径保留规则、改名冲突检查及按源包和产物摘要归档的映射；PNG 处理保留原像素和数据块。\n- 修复 Mac ZIP 解压后的签名和执行权限，升级校验发行签名，失败时恢复旧安装；更新下载使用系统证书校验。\n\n完整安装包：\n\n- [Mac](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-mac-v1.0.19.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-win-v1.0.19.zip)\n\n已通过引擎 129 项测试、桌面端 73 项测试、静态分析和双平台构建。Mac 已检查实际 ZIP 解压后的严格验签、架构、内置工具和启动；Windows 已通过升级 helper 的真实替换测试。未完成 Windows 和 Android 真机业务回归。\n\n源码提交：232403e51850dc11925fedae3439672ec993f613\n",
-          "file": "apkobj-mac-v1.0.19.zip",
-          "size": 238767943,
-          "downloadCount": 4,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-mac-v1.0.19.zip"
         }
       ],
       "win": [
+        {
+          "bundleId": "com.apkobj.tools",
+          "version": "1.0.22",
+          "uploadedAt": "2026-11-11T09:27:48Z",
+          "tag": "v1.0.22",
+          "releaseName": "APKObj v1.0.22",
+          "notes": "项目运行历史现在按 ABI 显示本次 SO 就地壳实际处理的库数量。展开一条记录即可查看；没有选择目标库时会显示“未配置目标库”。\n\n命令行启用 VirusTotal 自检时，每次只构建一个 APK。检测未通过或服务不可用时，命令返回失败并保留已有输出。普通项目打包中的本地评分仍只写入报告。引擎异常上报已移除原始命令行参数，避免上传参数中的密钥。\n\nmacOS 和 Windows 均提供完整包及应用内更新包。首次安装请下载对应平台文件名不含 `-update` 的 ZIP。macOS 包适用于 Apple 芯片，最低支持 macOS 12，使用本地签名，未经 Apple 公证。\n",
+          "file": "apkobj-win-v1.0.22.zip",
+          "size": 237690363,
+          "downloadCount": 0,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.22/apkobj-win-v1.0.22.zip"
+        },
         {
           "bundleId": "com.apkobj.tools",
           "version": "1.0.21",
@@ -57,7 +69,7 @@
           "notes": "APKObj v1.0.21\n\n- 新增原生库审核和调试信息剥离，保留 Flutter 核心库及带自校验的 SDK 内容。\n- 项目配置可按库名和 ABI 选择 SO 就地壳，运行历史可打开逐库报告，查看处理结果和保留原因。\n- 修复原生库输出失败时的备份恢复；恢复未完成时保留旧文件备份。\n- 损坏或越界的 ELF 记录为无法解析并保留原库；符号和调试信息剥离选项分别生效，保留节表和符号引用。\n- 资源表重写后增加结构校验，修复后续原生库处理覆盖前序压缩效果的问题。\n- 修复检查更新和下载安装包的连接证书问题，补充网络、超时及版本信息错误提示。\n\n完整安装包：\n\n- [Mac（Apple Silicon，macOS 12.0+）](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.21/apkobj-mac-v1.0.21.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.21/apkobj-win-v1.0.21.zip)\n\n安装包内置 JRE、apktool、bundletool、JADX 和 Android platform-tools。Mac 使用本地签名，未做 Apple 公证；首次打开被系统拦截时，可运行完整包同目录的“首次打不开请双击我.command”。\n\n本地已通过 196 项引擎测试、101 项桌面端测试、静态分析和 Mac 调试构建。真实 APK 完成审核、剥离、指定库就地壳和签名，20 个受保护库的内容保持不变，逐库报告和历史记录可读取；评分 65 时仍成功交付。实际 Mac 发行包内置引擎复验同一源包，评分 68 时成功交付，V2/V3 签名核验通过。\n\nMac 和 Windows 正式构建及升级替换测试通过。Mac 实际发行 ZIP 的严格签名、版本、架构、内置工具和界面启动检查通过；完整包、增量包及清单逐项核对大小和 SHA-256。未完成 Windows 桌面和 Android 真机业务回归。\n\n源码提交：ede3a8556c93789c67bd29f80e32765997b3e446\n",
           "file": "apkobj-win-v1.0.21.zip",
           "size": 237686238,
-          "downloadCount": 0,
+          "downloadCount": 2,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.21/apkobj-win-v1.0.21.zip"
         },
         {
@@ -71,22 +83,10 @@
           "size": 237360724,
           "downloadCount": 4,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-win-v1.0.20.zip"
-        },
-        {
-          "bundleId": "com.apkobj.tools",
-          "version": "1.0.19",
-          "uploadedAt": "2026-11-05T13:10:56Z",
-          "tag": "v1.0.19",
-          "releaseName": "APKObj v1.0.19",
-          "notes": "APKObj v1.0.19\n\nMac 旧版本请手动下载完整包，退出应用后覆盖安装。Mac 包适用于 Apple Silicon，要求 macOS 12.0 或更高版本。\n\n- 移除兼容模式和加固步骤开关，项目、任务、自动签名和指定证书入口固定执行完整加固流程；旧项目的关闭配置自动归一。\n- 保留证书、包名、业务能力清理、装机测试和上传配置，修复保留原包名时的相对 Application 类名解析。\n- 补齐 V4 .idsig 文件生成和验证，签名或资源处理失败时保留已有产物，阻止输出路径覆盖证书。\n- 增加资源路径保留规则、改名冲突检查及按源包和产物摘要归档的映射；PNG 处理保留原像素和数据块。\n- 修复 Mac ZIP 解压后的签名和执行权限，升级校验发行签名，失败时恢复旧安装；更新下载使用系统证书校验。\n\n完整安装包：\n\n- [Mac](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-mac-v1.0.19.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-win-v1.0.19.zip)\n\n已通过引擎 129 项测试、桌面端 73 项测试、静态分析和双平台构建。Mac 已检查实际 ZIP 解压后的严格验签、架构、内置工具和启动；Windows 已通过升级 helper 的真实替换测试。未完成 Windows 和 Android 真机业务回归。\n\n源码提交：232403e51850dc11925fedae3439672ec993f613\n",
-          "file": "apkobj-win-v1.0.19.zip",
-          "size": 237251746,
-          "downloadCount": 4,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.19/apkobj-win-v1.0.19.zip"
         }
       ],
       "showPlatformBundleIds": false,
-      "latestAt": "2026-11-11T08:13:09Z"
+      "latestAt": "2026-11-11T09:27:48Z"
     }
   ]
 }
