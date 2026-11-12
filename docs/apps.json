@@ -1,7 +1,7 @@
 {
   "siteTitle": "APKObj 工具 · 分发",
   "publicUrl": "https://xiaoli55979.github.io/apk_obj_release",
-  "generatedAt": "2026-11-11T09:30:06.391Z",
+  "generatedAt": "2026-11-12T03:49:33.513Z",
   "apps": [
     {
       "id": "com.apkobj.tools",
@@ -12,6 +12,18 @@
       "mac": [
         {
           "bundleId": "com.apkobj.tools",
+          "version": "1.0.23",
+          "uploadedAt": "2026-11-12T03:26:57Z",
+          "tag": "v1.0.23",
+          "releaseName": "APKObj v1.0.23",
+          "notes": "APKObj v1.0.23\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: c22b11d8bbed0346916a7361204ce625221daac4\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 在项目运行历史中展开一条记录，可以看到 SO 就地壳实际处理了多少个库，以及各 ABI 的数量。\n- 命令行启用 VirusTotal 自检时只构建一次。检测未通过或服务不可用时返回失败，保留已有输出。普通项目打包的本地评分只写入报告。\n- 引擎异常上报中移除了原始命令行参数，避免上传参数中的密钥。\n- macOS 使用本地签名，未做 Apple 公证；首次打开被系统拦截时，可运行完整包同目录的首次打不开请双击我.command。\n- macOS 最低版本为 12.0，GUI 与内置 JRE 使用相同架构。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.23-update.zip`\n- `apkobj-mac-v1.0.23.manifest.json`\n- `apkobj-mac-v1.0.23.zip`\n- `apkobj-win-v1.0.23-update.zip`\n- `apkobj-win-v1.0.23.manifest.json`\n- `apkobj-win-v1.0.23.zip`\n",
+          "file": "apkobj-mac-v1.0.23.zip",
+          "size": 239065536,
+          "downloadCount": 0,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.23/apkobj-mac-v1.0.23.zip"
+        },
+        {
+          "bundleId": "com.apkobj.tools",
           "version": "1.0.22",
           "uploadedAt": "2026-11-11T09:27:45Z",
           "tag": "v1.0.22",
@@ -19,7 +31,7 @@
           "notes": "项目运行历史现在按 ABI 显示本次 SO 就地壳实际处理的库数量。展开一条记录即可查看；没有选择目标库时会显示“未配置目标库”。\n\n命令行启用 VirusTotal 自检时，每次只构建一个 APK。检测未通过或服务不可用时，命令返回失败并保留已有输出。普通项目打包中的本地评分仍只写入报告。引擎异常上报已移除原始命令行参数，避免上传参数中的密钥。\n\nmacOS 和 Windows 均提供完整包及应用内更新包。首次安装请下载对应平台文件名不含 `-update` 的 ZIP。macOS 包适用于 Apple 芯片，最低支持 macOS 12，使用本地签名，未经 Apple 公证。\n",
           "file": "apkobj-mac-v1.0.22.zip",
           "size": 239101605,
-          "downloadCount": 0,
+          "downloadCount": 3,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.22/apkobj-mac-v1.0.22.zip"
         },
         {
@@ -33,21 +45,21 @@
           "size": 239096600,
           "downloadCount": 2,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.21/apkobj-mac-v1.0.21.zip"
-        },
-        {
-          "bundleId": "com.apkobj.tools",
-          "version": "1.0.20",
-          "uploadedAt": "2026-11-06T03:18:13Z",
-          "tag": "v1.0.20",
-          "releaseName": "APKObj v1.0.20",
-          "notes": "APKObj v1.0.20\n\n- 本地风险评分改为只写日志和报告，高分或扫描异常不再阻断处理、上传或成功结果。\n- 历史配置中的评分阻断开关自动失效，保存固定关闭；完整加固流程继续默认执行。\n- 独立自检的本地模式及自动降级模式首轮交付产物；明确选择的 VirusTotal 检测保留原有判定。\n- 打包、签名、技术装机和真实上传错误仍正常报错。\n- Mac 完整包补入“首次打不开请双击我.command”，解决此前正式 ZIP 漏带首次启动处理脚本的问题。\n\n完整安装包：\n\n- [Mac（Apple Silicon，macOS 12.0+）](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-mac-v1.0.20.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-win-v1.0.20.zip)\n\nMac 使用本地签名，未做 Apple 公证。首次打开被系统拦截时，可运行完整包内同目录的“首次打不开请双击我.command”；脚本只清理 APKObj 的下载隔离标记。\n\n已通过引擎 140 项、桌面端 77 项测试和静态分析。已验证同一个实际源包高分仍可成功处理，本机测试存储收到的产物摘要与最终签名 APK 一致，真实上传错误仍记为失败。Mac 已完成实际发布 ZIP 的严格验签、版本、架构、包内工具及启动检查；Windows 已通过构建和升级 helper 真实替换测试。未完成 Windows 和 Android 真机业务回归。\n\n源码提交：c75af80d6e5b85ee50bbe70bc2f2c14f33e2dc97\n",
-          "file": "apkobj-mac-v1.0.20.zip",
-          "size": 238771737,
-          "downloadCount": 4,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-mac-v1.0.20.zip"
         }
       ],
       "win": [
+        {
+          "bundleId": "com.apkobj.tools",
+          "version": "1.0.23",
+          "uploadedAt": "2026-11-12T03:26:54Z",
+          "tag": "v1.0.23",
+          "releaseName": "APKObj v1.0.23",
+          "notes": "APKObj v1.0.23\n\n来源仓库: https://github.com/xiaoli55979/apk_obj\n来源提交: c22b11d8bbed0346916a7361204ce625221daac4\n\n发布平台:\n- Windows: 全量包、增量包、manifest\n- macOS: 全量包、增量包、manifest\n备注:\n- 在项目运行历史中展开一条记录，可以看到 SO 就地壳实际处理了多少个库，以及各 ABI 的数量。\n- 命令行启用 VirusTotal 自检时只构建一次。检测未通过或服务不可用时返回失败，保留已有输出。普通项目打包的本地评分只写入报告。\n- 引擎异常上报中移除了原始命令行参数，避免上传参数中的密钥。\n- macOS 使用本地签名，未做 Apple 公证；首次打开被系统拦截时，可运行完整包同目录的首次打不开请双击我.command。\n- macOS 最低版本为 12.0，GUI 与内置 JRE 使用相同架构。\n- 本次发布资产如下。\n\n- `apkobj-mac-v1.0.23-update.zip`\n- `apkobj-mac-v1.0.23.manifest.json`\n- `apkobj-mac-v1.0.23.zip`\n- `apkobj-win-v1.0.23-update.zip`\n- `apkobj-win-v1.0.23.manifest.json`\n- `apkobj-win-v1.0.23.zip`\n",
+          "file": "apkobj-win-v1.0.23.zip",
+          "size": 237669385,
+          "downloadCount": 0,
+          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.23/apkobj-win-v1.0.23.zip"
+        },
         {
           "bundleId": "com.apkobj.tools",
           "version": "1.0.22",
@@ -57,7 +69,7 @@
           "notes": "项目运行历史现在按 ABI 显示本次 SO 就地壳实际处理的库数量。展开一条记录即可查看；没有选择目标库时会显示“未配置目标库”。\n\n命令行启用 VirusTotal 自检时，每次只构建一个 APK。检测未通过或服务不可用时，命令返回失败并保留已有输出。普通项目打包中的本地评分仍只写入报告。引擎异常上报已移除原始命令行参数，避免上传参数中的密钥。\n\nmacOS 和 Windows 均提供完整包及应用内更新包。首次安装请下载对应平台文件名不含 `-update` 的 ZIP。macOS 包适用于 Apple 芯片，最低支持 macOS 12，使用本地签名，未经 Apple 公证。\n",
           "file": "apkobj-win-v1.0.22.zip",
           "size": 237690363,
-          "downloadCount": 0,
+          "downloadCount": 4,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.22/apkobj-win-v1.0.22.zip"
         },
         {
@@ -71,22 +83,10 @@
           "size": 237686238,
           "downloadCount": 2,
           "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.21/apkobj-win-v1.0.21.zip"
-        },
-        {
-          "bundleId": "com.apkobj.tools",
-          "version": "1.0.20",
-          "uploadedAt": "2026-11-06T03:18:17Z",
-          "tag": "v1.0.20",
-          "releaseName": "APKObj v1.0.20",
-          "notes": "APKObj v1.0.20\n\n- 本地风险评分改为只写日志和报告，高分或扫描异常不再阻断处理、上传或成功结果。\n- 历史配置中的评分阻断开关自动失效，保存固定关闭；完整加固流程继续默认执行。\n- 独立自检的本地模式及自动降级模式首轮交付产物；明确选择的 VirusTotal 检测保留原有判定。\n- 打包、签名、技术装机和真实上传错误仍正常报错。\n- Mac 完整包补入“首次打不开请双击我.command”，解决此前正式 ZIP 漏带首次启动处理脚本的问题。\n\n完整安装包：\n\n- [Mac（Apple Silicon，macOS 12.0+）](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-mac-v1.0.20.zip)\n- [Windows](https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-win-v1.0.20.zip)\n\nMac 使用本地签名，未做 Apple 公证。首次打开被系统拦截时，可运行完整包内同目录的“首次打不开请双击我.command”；脚本只清理 APKObj 的下载隔离标记。\n\n已通过引擎 140 项、桌面端 77 项测试和静态分析。已验证同一个实际源包高分仍可成功处理，本机测试存储收到的产物摘要与最终签名 APK 一致，真实上传错误仍记为失败。Mac 已完成实际发布 ZIP 的严格验签、版本、架构、包内工具及启动检查；Windows 已通过构建和升级 helper 真实替换测试。未完成 Windows 和 Android 真机业务回归。\n\n源码提交：c75af80d6e5b85ee50bbe70bc2f2c14f33e2dc97\n",
-          "file": "apkobj-win-v1.0.20.zip",
-          "size": 237360724,
-          "downloadCount": 4,
-          "downloadUrl": "https://github.com/xiaoli55979/apk_obj_release/releases/download/v1.0.20/apkobj-win-v1.0.20.zip"
         }
       ],
       "showPlatformBundleIds": false,
-      "latestAt": "2026-11-11T09:27:48Z"
+      "latestAt": "2026-11-12T03:26:57Z"
     }
   ]
 }
